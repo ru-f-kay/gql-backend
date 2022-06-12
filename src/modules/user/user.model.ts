@@ -9,6 +9,9 @@ export class UserModel {
   @Field()
   username: string;
 
+  @Field()
+  createdAt: Date;
+
   @Field(() => UserRole)
   role: UserRole;
 }

@@ -19,6 +19,9 @@ const isDev = process.env['NODE_ENV'] !== 'production';
       playground: isDev,
       autoSchemaFile: true,
       sortSchema: true,
+      buildSchemaOptions: {
+        dateScalarMode: 'isoDate',
+      },
     }),
     MikroOrmModule.forRoot({
       type: 'postgresql',
