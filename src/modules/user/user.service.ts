@@ -9,6 +9,10 @@ export class UserService {
     @InjectRepository(User) private readonly repo: EntityRepository<User>,
   ) {}
 
+  async getUsers(count?: number) {
+    return this.repo.findAll({ limit: count });
+  }
+
   getUserById(id: number) {
     return this.repo.findOneOrFail({ id });
   }

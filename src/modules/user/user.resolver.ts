@@ -10,4 +10,11 @@ export class UserResolver {
   async getUser(@Args('id', { type: () => Int }) id: number) {
     return this.service.getUserById(id);
   }
+
+  @Query(() => [UserModel])
+  async getUsers(
+    @Args('count', { type: () => Int, nullable: true }) count?: number,
+  ) {
+    return this.service.getUsers(count);
+  }
 }
